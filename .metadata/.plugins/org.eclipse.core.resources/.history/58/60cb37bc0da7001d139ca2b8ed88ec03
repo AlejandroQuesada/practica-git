@@ -1,0 +1,34 @@
+
+public class Persona {
+ private final static char SEXO_DEF = 'H';
+ public static final int INFRAPESO = -1;
+ 
+ public static final int PESO_IDEAL = 0;
+ 
+ public static final int SOBREPESO = 1;
+ 
+ private String nombre;
+ private int edad;
+ private String DNI;
+ private char sexo;
+ private double peso;
+ 
+ private double altura;
+ 
+ public Persona() {
+ this("", 0, SEXO_DEF, 0, 0);
+ }
+ 
+ public Persona(String nombre, int edad, char sexo) {
+ this(nombre, edad, sexo, 0, 0);
+ }
+ public Persona(String nombre, int edad, char sexo, double peso, 
+double altura) {
+ this.nombre = nombre;
+ this.edad = edad;
+ this.peso = peso;
+ this.altura = altura;
+ generarDni();
+ this.sexo = sexo;
+ comprobarSexo();
+ }
